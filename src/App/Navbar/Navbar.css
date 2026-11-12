@@ -1,0 +1,118 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: var(--navbar-height);
+    padding: 1rem clamp(1rem, 3vw, 3rem);
+    gap: clamp(1rem, 2vw, 2rem);
+}
+
+.navbar__logo {
+    width: clamp(120px, 15vw, 200px);
+    flex-shrink: 0;
+}
+
+.navbar__logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.navbar__links ul {
+    display: flex;
+    gap: clamp(0.25rem, 1vw, 2rem);
+}
+
+.navbar__links li a {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.25rem, 1vw, 2rem);
+
+    padding: 0.6rem clamp(0.5rem, 1vw, 1.5rem);
+    border-radius: var(--radius-lg);
+
+    font-size: var(--font-lg);
+    color: var(--color-text-secondary);
+    font-weight: var(--font-regular);
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar__links li a:hover {
+    color: var(--color-text);
+}
+
+.navbar__links li a:focus-visible {
+    color: var(--color-text);
+}
+
+.navbar__links li a.navbar__link--active {
+    background: var(--color-accent);
+    color: var(--color-text);
+    box-shadow: 0px 0px 10px var(--color-accent);
+}
+
+
+.navbar__actions {
+    display: flex;
+    gap: clamp(0.5rem, 2vw, 2rem);
+    align-items: center;
+}
+
+.navbar__actions a.actions__menu {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-text-secondary);
+    transition: color 0.3s ease-in-out;
+    padding: 0.6rem 1.2rem; 
+    border-radius: var(--radius-lg);
+}
+
+.navbar__actions button {
+    background: none;
+    border: none;
+    color: var(--color-text-secondary);
+    transition: color 0.3s ease-in-out;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius-lg);
+}
+
+.navbar__actions button:hover {
+    color: var(--color-text);
+}
+
+.navbar__actions a.actions__menu:focus-visible,
+.navbar__actions a.actions__menu:hover {
+    color: var(--color-text);
+}
+.navbar__actions button:focus-visible {
+    color: var(--color-text);
+}
+
+/* Responsive */
+
+@media (max-width: 1023px) {
+    .navbar__logo {
+        width: 130px;
+    }
+
+    .navbar__links ul {
+        gap: 0.25rem;
+    }
+
+    .navbar__links a {
+        padding: 0.5rem;
+        font-size: var(--font-sm);
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar__links {
+        display: none;
+    }
+
+    .navbar__actions a.actions__menu {
+        display: block;
+    }
+}
